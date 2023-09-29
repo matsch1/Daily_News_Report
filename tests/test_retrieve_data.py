@@ -4,4 +4,4 @@ import pytest
 
 def test_function_runs() -> None:
     news = retreive_news()
-    assert len(news) != 0
+    assert len(news['articles']) > 1

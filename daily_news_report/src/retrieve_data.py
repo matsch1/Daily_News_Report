@@ -31,7 +31,7 @@ class NEWSAPI_NewsCollector():
         url = 'https://newsapi.org/v2/everything?'
         parameters = {
             'q': '-Wetter OR -Musik OR -Verkehr OR -Fußball OR -Kommunen OR -heise+ OR -Spiel',  # query phrase
-            'pageSize': 10,  # maximum is 100
+            'pageSize': 20,  # maximum is 100
             'apiKey': os.getenv("NEWSAPI_API_KEY"),  # your own API key
             'sortBy': 'popularity',
             # 'from': datetime.now().date(), 'to': datetime.now().date(),
@@ -43,7 +43,7 @@ class NEWSAPI_NewsCollector():
         response = requests.get(url, params=parameters)
 
         response_json = response.json()
-        pprint.pprint(response_json)
+        # pprint.pprint(response_json)
 
         return response_json
 
