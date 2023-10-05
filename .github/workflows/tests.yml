@@ -25,8 +25,8 @@ jobs:
       with:
         poetry-version: ${{ matrix.poetry-version }}
     - name: Install dependencies from poetry
-      uses: poetry install
+      run: poetry install
     - name: activate poetry virtual environment
-      uses: poetry shell
+      run: poetry shell
     - name: Run the automated tests
       run: poetry run pytest -v
