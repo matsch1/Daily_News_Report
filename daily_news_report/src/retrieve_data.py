@@ -23,7 +23,7 @@ class NEWSAPI_NewsCollector():
         self._check_if_API_key_exists()
 
         general_news = self._retreive_general_news()
-        
+
         self.news_json = concatinate_news([general_news])
 
     def get_news_json(self):
@@ -48,12 +48,11 @@ class NEWSAPI_NewsCollector():
         # pprint.pprint(response_json)
 
         return response_json
-    
+
     def _check_if_API_key_exists(self):
-        print(os.getenv("NEWSAPI_API_KEY"))
-        if  os.getenv("NEWSAPI_API_KEY") is None:
+        if os.getenv("NEWSAPI_API_KEY") is None:
             raise ValueError("No NEWSAPI_API_KEY")
-        return not(os.getenv("NEWSAPI_API_KEY") is None)
+        return not (os.getenv("NEWSAPI_API_KEY") is None)
 
 
 def retreive_news():
